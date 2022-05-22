@@ -22,36 +22,30 @@ class MyApp extends StatelessWidget {
           children: [
             Positioned(
               child: Container(
+                // width: 100,
+                height: 170,
                 alignment: Alignment.center,
-                // color: Colors.black,
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        child: CircleAvatar(
-                          radius: 45.0,
-                          backgroundImage: AssetImage('hotel07.jpg'),
-                        ),
-                      ),
-                      Text('SuZzy'),
-                    ]),
+                color: Colors.blue,         
               ),
             ),
             Positioned(
               // top: 10,
               // left: 10,
               child: Container(
-                margin: EdgeInsets.all(40),
-                padding: EdgeInsets.fromLTRB(10, 80, 10, 10),
+                margin: EdgeInsets.fromLTRB(40, 100, 40, 40),
+                padding: EdgeInsets.fromLTRB(10, 90, 10, 10),
                 decoration: BoxDecoration(
+                  color: Colors.white,
                   border: Border.all(),
                 ),
-                height: 150,
+                height: 160,
                 child: Row(
+
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   // crossAxisAlignment: CrossAxisAlignment.,
                   children: [
                     Container(
+                      
                       child: Column(children: [
                         Text('3',
                             style: TextStyle(
@@ -83,6 +77,24 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+            ),
+            Positioned(
+              child: Container(
+                margin: EdgeInsets.fromLTRB(40, 70, 40, 40),
+                alignment: Alignment.center,
+                // color: Colors.black,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: CircleAvatar(
+                          radius: 45.0,
+                          backgroundImage: AssetImage('hotel07.jpg'),
+                        ),
+                      ),
+                      Text('SuZzy'),
+                    ]),
               ),
             ),
           ],
