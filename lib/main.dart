@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
             Positioned(
               child: Container(
                 // width: 100,
-                height: 170,
+                height: 200,
                 alignment: Alignment.center,
-                color: Colors.blue,         
+                color: Colors.blue,
               ),
             ),
             Positioned(
@@ -33,15 +33,15 @@ class MyApp extends StatelessWidget {
               // left: 10,
               child: Container(
                 margin: EdgeInsets.fromLTRB(40, 123, 40, 40),
-                padding: EdgeInsets.fromLTRB(10, 90, 10, 10),
+                padding: EdgeInsets.fromLTRB(40, 110, 40, 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.2)),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                height: 160,
+                height: 180,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   // crossAxisAlignment: CrossAxisAlignment.,
                   children: [
                     Container(
@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
             ),
             Positioned(
               child: Container(
-                margin: EdgeInsets.fromLTRB(40, 70, 40, 40),
+                margin: EdgeInsets.fromLTRB(40, 50, 40, 40),
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 alignment: Alignment.center,
                 // color: Colors.black,
@@ -89,14 +89,18 @@ class MyApp extends StatelessWidget {
                     children: [
                       Container(
                         child: CircleAvatar(
-                          radius: 45.0,
+                          radius: 60.0,
                           backgroundImage: AssetImage('hotel07.jpg'),
                         ),
                       ),
                       Container(
                         padding: EdgeInsets.all(6),
-                        child: Text('SuZzy'),
-                      ),                      
+                        child: Text('SuZzy',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 19,
+                            )),
+                      ),
                     ]),
               ),
             ),
@@ -151,6 +155,22 @@ class MyApp extends StatelessWidget {
                   children: [
                     Icon(Icons.people),
                     Text('   친구 관리'),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(2),
+                      width: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        '13',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   ],
                 )),
           ]),
