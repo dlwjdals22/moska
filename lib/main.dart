@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/myChannel.dart';
+import 'package:moska_flutter/myChannel.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      home: const MyApp(),
+      home: const myProfile(),
     ),
   );
 }
@@ -35,8 +35,8 @@ void main() {
 //   }
 // }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class myProfile extends StatelessWidget {
+  const myProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -136,105 +136,109 @@ class MyApp extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            child: Column(
-              children: [
-                InkWell(
-                  onTap: () {
-                    print('click!');
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.bar_chart),
-                        Text('   데이터'),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyChannel()));
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        border: Border(
-                      bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
-                    )),
-                    child: Row(
-                      children: [
-                        Icon(Icons.person),
-                        Text('   프로필 관리'),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    // print('click!');
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyChannel()));
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        border: Border(
-                      bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
-                    )),
-                    child: Row(
-                      children: [
-                        Icon(Icons.live_tv),
-                        Text('   내 채널'),
-                      ],
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    print('click!');
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.people),
-                        Text('   친구 관리'),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(2),
-                          width: 30,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            '13',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          ListTile(
+            leading: Icon(Icons.bar_chart),
+            title: Text('데이터'),
           ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('프로필 관리'),
+            onTap: () {
+               Navigator.push(
+                 context,
+                 MaterialPageRoute(builder: (context) => MyChannel()));
+                 },
+          ),
+          ListTile(
+            leading: Icon(Icons.live_tv),
+            title: Text('내 채널'),
+          ),
+          ListTile(
+            leading: Icon(Icons.people),
+            title: Text('친구 관리'),
+          ),
+          // Container(
+          //   child: Column(
+          //     children: [
+          //       Container(
+          //         padding: EdgeInsets.all(15),
+          //         decoration: BoxDecoration(
+          //           border: Border(
+          //             bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
+          //           ),
+          //         ),
+          //         child: Row(
+          //           children: [
+          //             Icon(Icons.bar_chart),
+          //             Text('   데이터'),
+          //           ],
+          //         ),
+          //       ),
+          //       InkWell(
+          //         onTap: () {
+          //           Navigator.push(context,
+          //               MaterialPageRoute(builder: (context) => MyChannel()));
+          //         },
+          //         child: Container(
+          //           padding: EdgeInsets.all(15),
+          //           decoration: BoxDecoration(
+          //               border: Border(
+          //             bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
+          //           )),
+          //           child: Row(
+          //             children: [
+          //               Icon(Icons.person),
+          //               Text('   프로필 관리'),
+          //             ],
+          //           ),
+          //         ),
+          //       ),
+          //       Container(
+          //         padding: EdgeInsets.all(15),
+          //         decoration: BoxDecoration(
+          //             border: Border(
+          //           bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
+          //         )),
+          //         child: Row(
+          //           children: [
+          //             Icon(Icons.live_tv),
+          //             Text('   내 채널'),
+          //           ],
+          //         ),
+          //       ),
+          //       Container(
+          //         padding: EdgeInsets.all(15),
+          //         decoration: BoxDecoration(
+          //           border: Border(
+          //             bottom: BorderSide(color: Color.fromRGBO(0, 0, 0, 0.1)),
+          //           ),
+          //         ),
+          //         child: Row(
+          //           children: [
+          //             Icon(Icons.people),
+          //             Text('   친구 관리'),
+          //             Container(
+          //               margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+          //               alignment: Alignment.center,
+          //               padding: EdgeInsets.all(2),
+          //               width: 30,
+          //               decoration: BoxDecoration(
+          //                 color: Colors.red,
+          //                 borderRadius: BorderRadius.circular(20),
+          //               ),
+          //               child: Text(
+          //                 '13',
+          //                 style: TextStyle(
+          //                   color: Colors.white,
+          //                 ),
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
       // onPressed: (){},
