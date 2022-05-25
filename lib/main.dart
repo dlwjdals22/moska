@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moska_flutter/myChannel.dart';
+import 'package:flutter_application_1/myChannel.dart';
+// import 'package:moska_flutter/myChannel.dart';
 
 void main() {
   runApp(
@@ -9,32 +10,7 @@ void main() {
   );
 }
 
-// class myChannel extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         body: Column(
-//           children: [
-//             Container(
-//               child: Text('asdf'),
-//             ),
-//             Container(),
-//             Container(),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// class myProfile extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(home: Text('asdf'));
-//   }
-// }
-
+// ignore: camel_case_types
 class myProfile extends StatelessWidget {
   const myProfile({Key? key}) : super(key: key);
 
@@ -46,16 +22,23 @@ class myProfile extends StatelessWidget {
       //       Icon(Icons.bar_chart),
       //       Icon(Icons.list),
       //     ]),
+      backgroundColor: Color.fromRGBO(150, 150, 150, 0.1),
       body: Column(
         children: [
           Stack(
             children: [
               Positioned(
                 child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('background.jpg'),
+                    ),
+                  ),
                   // width: 100,
-                  height: 200,
-                  alignment: Alignment.center,
-                  color: Colors.blue,
+                  height: 220,
+                  // alignment: Alignment.center,
+                  // color: Colors.blue,
                 ),
               ),
               Positioned(
@@ -115,47 +98,76 @@ class myProfile extends StatelessWidget {
                   alignment: Alignment.center,
                   // color: Colors.black,
                   child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          child: CircleAvatar(
-                            radius: 60.0,
-                            backgroundImage: AssetImage('hotel07.jpg'),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: CircleAvatar(
+                          radius: 60.0,
+                          backgroundImage: AssetImage('suzy.jpg'),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(6),
+                        child: Text(
+                          'SuZzy',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 19,
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.all(6),
-                          child: Text('SuZzy',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 19,
-                              )),
-                        ),
-                      ]),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
           ListTile(
+            tileColor: Colors.white,
             leading: Icon(Icons.bar_chart),
-            title: Text('데이터'),
+            title: Text(
+              '데이터',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {},
           ),
           ListTile(
+            tileColor: Colors.white,
             leading: Icon(Icons.person),
-            title: Text('프로필 관리'),
+            title: Text(
+              '프로필 관리',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onTap: () {
-               Navigator.push(
-                 context,
-                 MaterialPageRoute(builder: (context) => MyChannel()));
-                 },
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyChannel()));
+            },
           ),
           ListTile(
+            tileColor: Colors.white,
             leading: Icon(Icons.live_tv),
-            title: Text('내 채널'),
+            title: Text(
+              '내 채널',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {},
           ),
           ListTile(
+            tileColor: Colors.white,
             leading: Icon(Icons.people),
-            title: Text('친구 관리'),
+            title: Text(
+              '친구 관리',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {},
           ),
           // Container(
           //   child: Column(
