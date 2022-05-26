@@ -8,10 +8,14 @@ class MyChannel extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromRGBO(150, 150, 150, 0.1),
       appBar: AppBar(
-        title: Text("내 채널"),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        title: Text(
+          "내 채널",
+          style: TextStyle(color: Colors.black),
+        ),
       ),
-      body: 
-      Column(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -31,13 +35,10 @@ class MyChannel extends StatelessWidget {
             ),
           ),
           Expanded(
-            child:
-            Container(
-              margin: EdgeInsets.all(10),
-              child:
-              ListView(
-                children:
-                ListTile.divideTiles(
+            child: Container(
+              // margin: EdgeInsets.all(10),
+              child: ListView(
+                children: ListTile.divideTiles(
                   context: context,
                   tiles: [
                     ListTile(
@@ -49,7 +50,7 @@ class MyChannel extends StatelessWidget {
                       ),
                       title: Text('소개해주는 남자'),
                       trailing: Icon(Icons.close),
-                      onTap: (){},
+                      onTap: () {},
                     ),
                     ListTile(
                       tileColor: Colors.white,
@@ -60,7 +61,7 @@ class MyChannel extends StatelessWidget {
                       ),
                       title: Text('tvn D ENT'),
                       trailing: Icon(Icons.close),
-                      onTap: (){},
+                      onTap: () {},
                     ),
                     ListTile(
                       tileColor: Colors.white,
@@ -71,18 +72,19 @@ class MyChannel extends StatelessWidget {
                       ),
                       title: Text('오분순삭'),
                       trailing: Icon(Icons.close),
-                      onTap: (){},
+                      onTap: () {},
                     ),
                     ListTile(
                       tileColor: Colors.white,
                       // horizontalTitleGap: 1,
+                      // contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       leading: CircleAvatar(
                         backgroundImage: AssetImage('about_time.jpg'),
                         // radius: 60,
                       ),
                       title: Text('어바웃타임'),
                       trailing: Icon(Icons.close),
-                      onTap: (){},
+                      onTap: () {},
                     ),
                     ListTile(
                       tileColor: Colors.white,
@@ -93,7 +95,7 @@ class MyChannel extends StatelessWidget {
                       ),
                       title: Text('고몽'),
                       trailing: Icon(Icons.close),
-                      onTap: (){},
+                      onTap: () {},
                     ),
                   ],
                 ).toList(),
@@ -102,66 +104,6 @@ class MyChannel extends StatelessWidget {
           ),
         ],
       ),
-
-      // Column(
-      //   mainAxisAlignment: MainAxisAlignment.start,
-      //   children: [
-      //     ListTile(
-      //       // horizontalTitleGap: 1,
-      //       leading: CircleAvatar(
-      //         backgroundImage: AssetImage('lion_logo.jpg'),
-      //         // radius: 100,
-      //       ),
-      //       title: Text('소개해주는 남자'),
-      //     ),
-      //     ListTile(
-      //       // horizontalTitleGap: 1,
-      //       leading: CircleAvatar(
-      //         backgroundImage: AssetImage('lion_logo.jpg'),
-      //         // radius: 60,
-      //       ),
-      //       title: Text('소개해주는 남자'),
-      //     ),
-      //   ],
-      // )
-
-      //     ListView(
-      //   padding: EdgeInsets.all(20),
-      //   children: [
-      //     ListTile(
-      //       // horizontalTitleGap: 1,
-      //       leading: CircleAvatar(
-      //         backgroundImage: AssetImage('lion_logo.jpg'),
-      //         // radius: 60,
-      //       ),
-      //       title: Text('소개해주는 남자'),
-      //     ),
-      //     ListTile(
-      //       // horizontalTitleGap: 1,
-      //       leading: CircleAvatar(
-      //         backgroundImage: AssetImage('lion_logo.jpg'),
-      //         // radius: 60,
-      //       ),
-      //       title: Text('tvn D ENT'),
-      //     ),
-      //     ListTile(
-      //       // horizontalTitleGap: 1,
-      //       leading: CircleAvatar(
-      //         backgroundImage: AssetImage('lion_logo.jpg'),
-      //         // radius: 60,
-      //       ),
-      //       title: Text('오분순삭'),
-      //     ),
-      //     ListTile(
-      //       // horizontalTitleGap: 1,
-      //       leading: CircleAvatar(
-      //         backgroundImage: AssetImage('lion_logo.jpg'),
-      //         // radius: 60,
-      //       ),
-      //       title: Text('어바웃타임'),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

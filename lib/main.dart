@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_application_1/myChannel.dart';
-import 'package:moska_flutter/myChannel.dart';
+import 'package:flutter_application_1/myChannel.dart';
+// import 'package:moska_flutter/myChannel.dart';
 
 void main() {
   runApp(
@@ -9,6 +9,21 @@ void main() {
     ),
   );
 }
+
+// class ListWidget extends StatelessWidget {
+//   const ListWidget({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home : Scaffold(
+//         body
+//       )
+//     )
+//   }
+// }
+
+List<String> profile_list = ['내 채널', '친구 관리'];
 
 // ignore: camel_case_types
 class myProfile extends StatelessWidget {
@@ -49,8 +64,13 @@ class myProfile extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(40, 110, 40, 10),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.2)),
+                    border: Border.all(
+                      color: Color.fromRGBO(0, 0, 0, 0.2),
+                    ),
                     borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(color: Colors.grey, blurRadius: 3.0),
+                    ],
                   ),
                   height: 180,
                   child: Row(
@@ -58,14 +78,18 @@ class myProfile extends StatelessWidget {
                     // crossAxisAlignment: CrossAxisAlignment.,
                     children: [
                       Container(
-                        child: Column(children: [
-                          Text('3',
+                        child: Column(
+                          children: [
+                            Text(
+                              '3',
                               style: TextStyle(
                                 color: Colors.blue,
                                 fontSize: 25.0,
-                              ),),
-                          Text('시청시간'),
-                        ],),
+                              ),
+                            ),
+                            Text('시청시간'),
+                          ],
+                        ),
                       ),
                       Container(
                         child: Column(children: [
@@ -125,120 +149,98 @@ class myProfile extends StatelessWidget {
           Expanded(
             child: Container(
               child: ListView(
-                children: 
-                ListTile.divideTiles(
+                children: ListTile.divideTiles(
                   context: context,
                   tiles: [
-                                ListTile(
-                tileColor: Colors.white,
-                leading: Icon(Icons.bar_chart),
-                title: Text(
-                  '데이터',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                  onTap: () {},
-                ),
-                ListTile(
-                  tileColor: Colors.white,
-                  leading: Icon(Icons.person),
-                  title: Text(
-                    '프로필 관리',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    ListTile(
+                      tileColor: Colors.white,
+                      leading: Icon(Icons.bar_chart),
+                      title: Text(
+                        '데이터',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onTap: () {},
                     ),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyChannel()));
-                  },
-                ),
-                ListTile(
-                  tileColor: Colors.white,
-                  leading: Icon(Icons.live_tv),
-                  title: Text(
-                    '내 채널',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    ListTile(
+                      tileColor: Colors.white,
+                      leading: Icon(Icons.person),
+                      title: Text(
+                        '프로필 관리',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyChannel()));
+                      },
                     ),
-                  ),
-                  onTap: () {},
-                ),
-                ListTile(
-                  tileColor: Colors.white,
-                  leading: Icon(Icons.people),
-                  title: Text(
-                    '친구 관리',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    // profile_list.forEach(
+                    //   (value) {
+                    //     return
+                    //     ListTile(
+                    //       tileColor: Colors.white,
+                    //       leading: Icon(Icons.live_tv),
+                    //       title: Text((value.toString(),
+                    //       style: TextStyle(
+                    //           fontWeight: FontWeight.bold,
+                    //         ),
+                    //         ),
+
+                    //       ),
+                    //       onTap: () {},
+                    //     );
+                    //   },
+                    // ),
+                    ListTile(
+                      tileColor: Colors.white,
+                      leading: Icon(Icons.live_tv),
+                      title: Text(
+                        '내 채널',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onTap: () {},
                     ),
-                  ),
-                  onTap: () {},
-                ),
-          
-                  ]
+                    ListTile(
+                      tileColor: Colors.white,
+                      leading: Icon(Icons.people),
+                      title: Text(
+                        '친구 관리',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      // Container(
+                      //   margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                      //   alignment: Alignment.center,
+                      //   padding: EdgeInsets.all(2),
+                      //   width: 30,
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.red,
+                      //     borderRadius: BorderRadius.circular(20),
+                      //   ),
+                      //   child: Text(
+                      //     '13',
+                      //     style: TextStyle(
+                      //       color: Colors.white,
+                      //     ),
+                      //   ),
+                      // ),
+                      onTap: () {},
+                    ),
+                  ],
                 ).toList(),
               ),
             ),
           ),
-                      ],
-              ),
-
-          // ListTile(
-          //   tileColor: Colors.white,
-          //   leading: Icon(Icons.bar_chart),
-          //   title: Text(
-          //     '데이터',
-          //     style: TextStyle(
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          //   onTap: () {},
-          // ),
-          // SizedBox(
-          //   height: 10,
-          // ),
-          // ListTile(
-          //   tileColor: Colors.white,
-          //   leading: Icon(Icons.person),
-          //   title: Text(
-          //     '프로필 관리',
-          //     style: TextStyle(
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          //   onTap: () {
-          //     Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => MyChannel()));
-          //   },
-          // ),
-          // ListTile(
-          //   tileColor: Colors.white,
-          //   leading: Icon(Icons.live_tv),
-          //   title: Text(
-          //     '내 채널',
-          //     style: TextStyle(
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          //   onTap: () {},
-          // ),
-          // ListTile(
-          //   tileColor: Colors.white,
-          //   leading: Icon(Icons.people),
-          //   title: Text(
-          //     '친구 관리',
-          //     style: TextStyle(
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          //   onTap: () {},
-          // ),
-
-      
-      // onPressed: (){},
-      //   style : TextStyle(color : Colors.lightBlue);
+        ],
+      ),
     );
   }
 }
