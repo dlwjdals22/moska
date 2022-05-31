@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
 
+class ListWidget extends StatelessWidget {
+  const ListWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [Text('asdf')],
+    );
+  }
+}
+
+List<String> channel_list = ['소개해주는 남자', 'tvn D ENT', '오분순삭', '어바웃타임', '고몽'];
+
 class MyChannel extends StatelessWidget {
   const MyChannel({Key? key}) : super(key: key);
 

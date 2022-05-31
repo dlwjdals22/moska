@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/myChannel.dart';
-// import 'package:moska_flutter/myChannel.dart';
+// import 'package:flutter_application_1/myChannel.dart';
+import 'package:moska_flutter/myChannel.dart';
 
 void main() {
   runApp(
@@ -10,20 +10,49 @@ void main() {
   );
 }
 
-// class ListWidget extends StatelessWidget {
-//   const ListWidget({Key? key}) : super(key: key);
+List<String> profile_list = ['데이터', '프로필 관리', '내 채널', '친구 관리'];
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home : Scaffold(
-//         body
-//       )
-//     )
-//   }
-// }
+class ListWidget extends StatelessWidget {
+  const ListWidget({Key? key}) : super(key: key);
 
-List<String> profile_list = ['내 채널', '친구 관리'];
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: ListTile.divideTiles(
+        context: context,
+        tiles: profile_list.map((value) {
+          if (value == '프로필 관리') {
+            return ListTile(
+              tileColor: Colors.white,
+              leading: Icon(Icons.person),
+              title: Text(
+                '프로필 관리',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyChannel()));
+              },
+            );
+          }
+          return ListTile(
+            tileColor: Colors.white,
+            leading: Icon(Icons.live_tv),
+            title: Text(
+              '$value',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onTap: () {},
+          );
+        }),
+      ).toList(),
+    );
+  }
+}
 
 // ignore: camel_case_types
 class myProfile extends StatelessWidget {
@@ -32,11 +61,6 @@ class myProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar( title : Text('LIBIDO'),
-      //     actions : [
-      //       Icon(Icons.bar_chart),
-      //       Icon(Icons.list),
-      //     ]),
       backgroundColor: Color.fromRGBO(150, 150, 150, 0.1),
       body: Column(
         children: [
@@ -173,29 +197,9 @@ class myProfile extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MyChannel()));
+                       
                       },
                     ),
-                    // profile_list.forEach(
-                    //   (value) {
-                    //     return
-                    //     ListTile(
-                    //       tileColor: Colors.white,
-                    //       leading: Icon(Icons.live_tv),
-                    //       title: Text((value.toString(),
-                    //       style: TextStyle(
-                    //           fontWeight: FontWeight.bold,
-                    //         ),
-                    //         ),
-
-                    //       ),
-                    //       onTap: () {},
-                    //     );
-                    //   },
-                    // ),
                     ListTile(
                       tileColor: Colors.white,
                       leading: Icon(Icons.live_tv),
@@ -205,38 +209,54 @@ class myProfile extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                         Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyChannel()));
+                      },
                     ),
                     ListTile(
                       tileColor: Colors.white,
                       leading: Icon(Icons.people),
-                      title: Text(
-                        '친구 관리',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      title: Row(
+                        children: [
+                          Text(
+                            '친구 관리',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.all(1),
+                            width: 30,
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Text(
+                              '13',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      // Container(
-                      //   margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                      //   alignment: Alignment.center,
-                      //   padding: EdgeInsets.all(2),
-                      //   width: 30,
-                      //   decoration: BoxDecoration(
-                      //     color: Colors.red,
-                      //     borderRadius: BorderRadius.circular(20),
-                      //   ),
-                      //   child: Text(
-                      //     '13',
-                      //     style: TextStyle(
-                      //       color: Colors.white,
-                      //     ),
-                      //   ),
-                      // ),
                       onTap: () {},
                     ),
                   ],
                 ).toList(),
               ),
+
+              // map 돌리는 버전
+              // Expanded(
+              //   child: Container(
+              //     child: ListWidget(),
+              // map 돌리는 버전
             ),
           ),
         ],
