@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_application_1/myChannel.dart';
 import 'package:moska_flutter/myChannel.dart';
 import 'package:moska_flutter/makeRoom.dart';
 
@@ -247,22 +246,22 @@ class myProfile extends StatelessWidget {
                       ),
                       onTap: () {},
                     ),
-                    ListTile(
-                      tileColor: Colors.white,
-                      // leading: Icon(Icons.live_tv),
-                      title: Text(
-                        '방만들기',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => makeRoom()));
-                      },
-                    ),
+                    // ListTile(
+                    //   tileColor: Colors.white,
+                    //   // leading: Icon(Icons.live_tv),
+                    //   title: Text(
+                    //     '방만들기',
+                    //     style: TextStyle(
+                    //       fontWeight: FontWeight.bold,
+                    //     ),
+                    //   ),
+                    //   onTap: () {
+                    //     Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //             builder: (context) => makeRoom()));
+                    //   },
+                    // ),
                   ],
                 ).toList(),
               ),
